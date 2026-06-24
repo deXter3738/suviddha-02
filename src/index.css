@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family:
+    "Google Sans Flex",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+:root {
+  color: #e8e3d5;
+  background: #0b0b09;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(100, 112, 85, 0.18), transparent 28rem),
+    #0b0b09;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(215, 199, 164, 0.28);
+  color: #e8e3d5;
+}
+
+.font-serif,
+.font-serif * {
+  font-family: "IBM Plex Serif", serif;
+  font-style: normal;
+}
+
+.serif-accent {
+  line-height: 0.9;
+  position: relative;
+  top: -0.06em;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.42'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E");
+  background-size: 260px 260px;
+}
+
+.bg-vignette {
+  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.bg-warm-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 9, 0.15),
+    rgba(11, 11, 9, 0.55),
+    rgba(11, 11, 9, 0.82)
+  );
+}
+
+.section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 55%);
+}
+
+.hero-radial {
+  background: radial-gradient(circle at 25% 45%, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.45) 70%);
+}
+
+.cta-radial {
+  background: radial-gradient(circle at 50% 32%, rgba(100, 112, 85, 0.16), rgba(0, 0, 0, 0.56) 62%);
+}
+
+.field-date::-webkit-calendar-picker-indicator {
+  filter: invert(84%) sepia(15%) saturate(359%) hue-rotate(6deg) brightness(93%);
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
